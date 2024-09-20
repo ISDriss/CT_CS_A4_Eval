@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rorschach Image Display</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        #loading {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rorschach Image</h1>
+    <button id="loadImageButton">Generate Rorschach Image</button>
+    <div id="loading">Loading...</div>
+    <img id="rorschachImage" alt="Rorschach Image" style="display:none;"/>
+
+    <script>
+        const apiUrl = 'http://localhost:8000';
+
+        async function getImage() {
+            const loading = document.getElementById('loading');
+            const imgElement = document.getElementById('rorschachImage');
+            loading.style.display = 'block';
+
+            try {
+                const response = await axios.get(`${apiUrl}/rorschach-image`, {
+                    responseType: 'blob' // Important to handle the image blob
+                });
+                const imageUrl = URL.createObjectURL(response.data);
+                imgElement.src = imageUrl;
+                imgElement.style.display = 'block';
+            } catch (error) {
+                console.error('Error fetching the image:', error);
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+
+        document.getElementById('loadImageButton').onclick = getImage;
+    </script>
+</body>
+</html>
