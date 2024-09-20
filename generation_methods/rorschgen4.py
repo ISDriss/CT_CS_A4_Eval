@@ -1,7 +1,8 @@
 from PIL import Image, ImageFilter
 import numpy as np
 
-def generate_rorschach(image_size=(400, 400), noise_intensity=255, threshold=128):
+#Empirical testing shows that the optimal threshold value is 128, satisfactory results can still be obtained in the 120-132 range
+def generate_rorschach(image_size=(450, 450), noise_intensity=255, threshold=128):
     width, height = image_size
 
     # Step 1: Generate random noise for the heightmap
