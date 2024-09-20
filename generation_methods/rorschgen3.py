@@ -34,7 +34,7 @@ def generate_rorschach(image_size=(400, 400), noise_intensity=255, threshold=128
     full_image_rgb = full_image.convert('RGB')
 
     # Step 8: Show the generated Rorschach inkblot
-    full_image_rgb.show()
+    #full_image_rgb.show()
 
     # Optionally save the image as PNG
     full_image_rgb.save("rorschach.png")

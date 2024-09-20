@@ -3,7 +3,7 @@ from fastapi.responses import StreamingResponse
 from io import BytesIO
 from PIL import Image, ImageFilter
 import numpy as np
-from generation_methods.rorschgen3 import generate_rorschach_heightmap
+from generation_methods.rorschgen3 import generate_rorschach
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,7 +19,7 @@ def get_index():
 @app.get("/rorschach-image")
 def get_rorschach_image():
     # Generate the Rorschach image
-    image = generate_rorschach_heightmap()
+    image = generate_rorschach()
 
     # Save the image to a bytes buffer
     img_buffer = BytesIO()

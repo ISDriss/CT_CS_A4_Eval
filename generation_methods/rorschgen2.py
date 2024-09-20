@@ -30,7 +30,7 @@ def generate_rorschach(image_size=(400, 400), blotch_count=10):
     image.paste(mirrored_half, (width // 2, 0))
 
     # Show the generated Rorschach image
-    image.show()
+    #image.show()
 
     # Optionally save the image
     image.save("rorschach.png")
