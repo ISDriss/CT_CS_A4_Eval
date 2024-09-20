@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw
 import random
 
-def generate_rorschach_image_pillow(image_size=(400, 400), blotch_count=10):
+def generate_rorschach(image_size=(400, 400), blotch_count=10):
     # Create a blank canvas (RGB image)
     width, height = image_size
     image = Image.new("RGB", (width, height), (255, 255, 255))  # White background
@@ -33,7 +33,7 @@ def generate_rorschach_image_pillow(image_size=(400, 400), blotch_count=10):
     image.show()
 
     # Optionally save the image
-    image.save("generated rorschach.png")
+    image.save("rorschach.png")
 
 # Call the function to generate and display the image
-generate_rorschach_image_pillow()
+generate_rorschach()

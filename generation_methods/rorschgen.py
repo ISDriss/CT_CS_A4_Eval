@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-def generate_rorschach_image(image_size=(400, 400), blotch_count=10):
+def generate_rorschach(image_size=(400, 400), blotch_count=10):
     # Create a blank canvas (RGB image)
     width, height = image_size
     canvas = np.zeros((height, width, 3), dtype=np.uint8)
@@ -33,4 +33,4 @@ def generate_rorschach_image(image_size=(400, 400), blotch_count=10):
     plt.show()
 
 # Call the function to generate and display the image
-generate_rorschach_image()
+generate_rorschach()
