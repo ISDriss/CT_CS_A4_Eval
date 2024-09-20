@@ -5,6 +5,7 @@ repo du projet évalué de computer science créatech
 une page web en relation à un rojet d'électroencéphalogramme (eeg)
 
 - **MUST HAVE**
+  - créer un reportory github
     - un générateur aléatoire de test de roschach
         - affichage d'une image
         - génération d'une image
