@@ -3,7 +3,7 @@ from fastapi.responses import StreamingResponse
 from io import BytesIO
 from PIL import Image, ImageFilter
 import numpy as np
-from generation_methods.rorschgen3 import generate_rorschach
+from generation_methods.rorschgen4 import generate_rorschach
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
