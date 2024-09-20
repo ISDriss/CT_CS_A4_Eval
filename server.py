@@ -5,22 +5,16 @@ from PIL import Image, ImageFilter
 import numpy as np
 from generation_methods.rorschgen3 import generate_rorschach_heightmap
 
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+
 app = FastAPI()
 
-@app.get("/")
-def home():
-    html_content = """
-    <html>
-        <head>
-            <title>Rorschach Test</title>
-        </head>
-        <body>
-            <h1>Randomly Generated Rorschach Test</h1>
-            <img src="/rorschach-image" alt="Rorschach Test Image" />
-        </body>
-    </html>
-    """
-    return html_content
+@app.get("/", response_class=HTMLResponse)
+def get_index():
+  with open('index.html', 'r') as file:
+    return file.read()
 
 @app.get("/rorschach-image")
 def get_rorschach_image():
