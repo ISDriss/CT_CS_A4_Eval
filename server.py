@@ -19,7 +19,9 @@ def get_index():
 @app.get("/rorschach-image")
 def get_rorschach_image():
     # Generate the Rorschach image
-    image = generate_rorschach()
+    generate_rorschach()
+    image = Image.open("rorschach.png")
+    image = image.convert('RGB')
 
     # Save the image to a bytes buffer
     img_buffer = BytesIO()
