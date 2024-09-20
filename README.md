@@ -12,5 +12,6 @@ une page web en relation à un rojet d'électroencéphalogramme (eeg)
         - aléatoire par la forme et la couleurs     /05 (2.5 forme, 2.5 couleurs)
 
 - **NICE TO HAVE**  /10
-    - une rangée d'indicateur mis à jour en live à partir d'entrées de l'ordinateur     /06
+    - un slider pour modifier les treshold                                              /03
+    - une rangée d'indicateur mis à jour en live à partir d'entrées de l'ordinateur     /03
     - affichage d'un pourcentage d'activation sous les indicateurs 0-1                  /04
